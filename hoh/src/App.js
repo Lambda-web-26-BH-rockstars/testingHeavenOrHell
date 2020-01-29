@@ -34,8 +34,9 @@ function App() {
       <img src={pictures[imageNumber].path} alt="" aria-label={pictures[imageNumber].description} />
       <button
         onClick={()=> {
-
-          setImageNumber(imageNumber === 0 ? pictures.length-1 : imageNumber-1)
+          
+          //setImageNumber(imageNumber === 0 ? pictures.length-1 : imageNumber-1)
+          setImageNumber(imageNumber-1) //fails 'renders street life after previous/
         }}
       >
         Previous
