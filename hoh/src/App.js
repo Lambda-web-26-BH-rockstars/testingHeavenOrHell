@@ -35,8 +35,8 @@ function App() {
       <button
         onClick={()=> {
           
-          //setImageNumber(imageNumber === 0 ? pictures.length-1 : imageNumber-1)
-          setImageNumber(imageNumber-1) //fails 'renders street life after previous/
+          setImageNumber(imageNumber === 0 ? pictures.length-1 : imageNumber-1)
+          //setImageNumber(imageNumber-1) //fails 'renders street life after previous/
         }}
       >
         Previous
