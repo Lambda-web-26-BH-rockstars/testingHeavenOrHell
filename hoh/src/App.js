@@ -43,6 +43,7 @@ function App() {
       </button>
       <button
         onClick={()=> {
+          //setImageNumber(imageNumber+1) //fails 'renders coffee after street life'
           setImageNumber((imageNumber+1) % (pictures.length))
         }}
       >

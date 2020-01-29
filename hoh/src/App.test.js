@@ -22,9 +22,9 @@ test('renders coffee', () => {
   expect(pelement).toBeInTheDocument()
 })
 
-//now it gets real!
+//now it gets real! by testing next button
 
-test('renders crazy cat', () => {
+test('renders crazy cat after next', () => {
   const {getByText} = render(<App />)
   const nextTest = getByText(/next/i)
   fireEvent.click(nextTest)
@@ -32,7 +32,7 @@ test('renders crazy cat', () => {
   expect(crazy_cat).toBeInTheDocument()
 })
 
-test('renders russian granola', () => {
+test('renders russian granola after crazy cat', () => {
   const {getByText} = render(<App />)
   const nextTest = getByText(/next/i)
   fireEvent.click(nextTest)
@@ -41,7 +41,7 @@ test('renders russian granola', () => {
   expect(crazy_cat).toBeInTheDocument()
 })
 
-test('renders street life', () => {
+test('renders street life after russian granola', () => {
   const {getByText} = render(<App />)
   const nextTest = getByText(/next/i)
   fireEvent.click(nextTest)
@@ -69,6 +69,15 @@ test('renders street life after previous', () => {
   const nextTest = getByText(/previous/i)
   fireEvent.click(nextTest)
   const crazy_cat = getByText(/street life/i)
+  expect(crazy_cat).toBeInTheDocument()
+})
+
+test('renders russian granola after street life', () => {
+  const {getByText} = render(<App />)
+  const nextTest = getByText(/previous/i)
+  fireEvent.click(nextTest)
+  fireEvent.click(nextTest)
+  const crazy_cat = getByText(/russian granola/i)
   expect(crazy_cat).toBeInTheDocument()
 })
 
