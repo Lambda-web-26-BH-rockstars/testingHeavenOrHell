@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+
   const [pictures, setPictures] = useState([
     {
       name: "coffee",
@@ -30,18 +31,18 @@ function App() {
   return (
     <div>
       <p>{pictures[imageNumber].name}</p>
-      <img src={pictures[imageNumber].path} aria-label={pictures[imageNumber].description} />
+      <img src={pictures[imageNumber].path} alt="" aria-label={pictures[imageNumber].description} />
       <button
         onClick={()=> {
 
-          setImageNumber(imageNumber === 0 ? 3 : imageNumber-1)
+          setImageNumber(imageNumber === 0 ? pictures.length-1 : imageNumber-1)
         }}
       >
         Previous
       </button>
       <button
         onClick={()=> {
-          setImageNumber((imageNumber+1) % 4)
+          setImageNumber((imageNumber+1) % (pictures.length))
         }}
       >
         Next
